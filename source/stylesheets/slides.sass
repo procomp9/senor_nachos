@@ -1,0 +1,67 @@
+#slides
+
+  img
+    position: absolute
+    margin-left: -100px
+
+  .slides_container
+    width: 700px
+    margin-left: 10px
+    padding-top: 21px
+    padding-left: 80px
+
+    .slide
+      height: 300px
+      
+      img
+        padding-left: 20px  
+
+      .title
+        font-size: 24px
+        font-weight: bold
+        margin-bottom: 5px
+
+      .text, .title
+        position: relative
+        margin-left: 430px
+        width: 260px
+        z-index: 99
+
+.button
+  position: absolute
+  margin-top: 160px
+  cursor: pointer
+
+.prev
+  @extend .button
+  margin-left: 73px
+  z-index: 1
+
+.next
+  @extend .button
+  margin-left: 905px
+  z-index: 1
+    
+.pagination
+  position: relative
+  display: table
+  margin: 0 auto
+  padding-top: 30px
+  left: -30px
+  li
+    float: left
+    margin: 0px 1px
+    list-style: none
+
+    a
+      display: block
+      width: 12px
+      height: 0px
+      padding-top: 12px
+      background-image: url(../images/slides/pagination.png)
+      background-position: 0 0
+      float: left
+      overflow: hidden
+
+  li.current a
+    background-position: 0 -12px

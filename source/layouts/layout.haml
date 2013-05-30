@@ -1,0 +1,74 @@
+!!!
+%head
+  %title 
+    Señor Nacho B&B
+  
+  = stylesheet_link_tag 'application'
+  = stylesheet_link_tag 'navigation'
+
+  = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'
+  = javascript_include_tag 'application'
+  
+%body
+  %header
+      
+  %nav
+    %ul{:class => 'navigation'}
+      %li
+        %a{:id => 'location', :href => '/location'}
+          %span.b
+            %span.c Location
+      %li
+        %a{:id => 'reservations', :href => '/reservations'}
+          %span.b
+            %span.c Reservations
+      %li{:id => 'logo'}
+        %a{:href => '/'}
+          =image_tag 'logo.png', :alt => 'logo', :width => '200', :height => '80'
+      %li
+        %a{:id => 'events', :href => '/events'}
+          %span.b
+            %span.c Events
+      %li  
+        %a{:id => 'deals', :href => '/deals'}
+          %span.b
+            %span.c Deals
+      %li  
+        %a{:id => 'contact', :href => '/contact'}
+          %span.b
+            %span.c Contact
+
+  #content
+    = yield
+
+  %footer
+    #privacy
+      = "señor nacho bed & breakfast &copy; #{Time.now.year} |&nbsp;"
+      %a{:href=> '/privacy'} 
+        privacy policy
+    #social_links
+      %ul
+        %li
+          %a{:href => 'http://twitter.com/senor_nacho', :target => '_blank'}
+            =image_tag 'twitter_icon.png', :alt => 'twitter', :width => '26', :height => '26'
+        %li
+          %a{:href => 'http://facebook.com/senor_nacho', :target => '_blank'}
+            =image_tag 'facebook_icon.png', :alt => 'facebook', :width => '22', :height => '22'
+        %li
+          %a{:href => 'http://plus.google.com/some_id/', :target => '_blank'}
+            =image_tag 'google_icon.png', :alt => 'google', :width => '24', :height => '24'
+      
+:javascript
+  $(function() {
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38201311-1']);
+    _gaq.push(['_setDomainName', 'senornacho.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  });

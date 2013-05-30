@@ -1,0 +1,79 @@
+= stylesheet_link_tag 'slides'
+= javascript_include_tag 'slides'
+
+= stylesheet_link_tag 'home'
+
+.section
+  #slides
+    %a{:class => 'prev'}
+      = image_tag 'slides/prev.png', :alt => 'prev', :width => '20', :height => '40'
+    %a{:class => 'next'}
+      = image_tag 'slides/next.png', :alt => 'next', :width => '20', :height => '40'  
+    
+    = image_tag 'slides/frame.png', :alt => 'frame', :width => '1000', :height => '380'
+    .slides_container
+      .slide
+        = image_tag 'gallery/1.jpg', :alt => '1.jpg', :width => '500', :height => '300'
+        .title
+          Bed & Breakfast
+        .text
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      .slide
+        = image_tag 'gallery/2.jpg', :alt => '2.jpg', :width => '500', :height => '300'
+        .title
+          Weddings & Corporate Events
+        .text
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+      .slide
+        = image_tag 'gallery/3.jpg', :alt => '2.jpg', :width => '500', :height => '300'
+        .title
+          Farmer's Market
+        .text
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+      .slide
+        = image_tag 'gallery/4.jpg', :alt => '2.jpg', :width => '500', :height => '300'
+        .title
+          Village of Ruidoso
+        .text
+          Aenean mollis diam vitae mi iaculis hendrerit. Vestibulum vel nisi dolor, nec eleifend turpis. Curabitur dignissim leo auctor lorem vestibulum sit amet sodales enim vulputate. Morbi sit amet nibh mattis nibh imperdiet condimentum. In hac habitasse platea dictumst. Maecenas in erat quis odio rhoncus sollicitudin eu nec dolor. Mauris at lectus libero. Nulla id lorem elit, vitae dapibus est. Quisque sem nulla, pharetra quis suscipit at, sagittis eget nibh. Nam vitae arcu et felis consectetur fermentum vel sed quam. In gravida nulla at ipsum suscipit eget congue ligula adipiscing.
+
+      .slide
+        = image_tag 'gallery/5.jpg', :alt => '2.jpg',  :width => '500', :height => '300'
+        .title
+          Fantastic Views and Climate
+        .text
+          Vestibulum ac dictum mi. Proin volutpat tempus magna, quis gravida sapien elementum vel. In convallis, lorem sed iaculis consectetur, sem nisi viverra elit, ac malesuada metus orci ut risus. Suspendisse justo nunc, lobortis nec tempus gravida, suscipit a mi. Nam a neque ligula, vitae venenatis magna. Donec in ante vel justo tristique ultricies. Suspendisse viverra pharetra elit vitae accumsan. Vivamus semper scelerisque sapien. Integer elementum venenatis auctor. Integer euismod urna quis neque gravida malesuada. Quisque eget consequat tortor. Sed risus mi, mollis eu faucibus sed, laoreet sed turpis.
+
+.section
+  %span#news
+    .title
+      News
+    %ul
+      %li
+        Something happened today
+      %li
+        This happened last week
+
+  %span#social
+    .title
+      Social Feed
+    %ul
+      %li
+        tweet from yesterday
+      %li
+        tweet from last month
+  
+:javascript
+
+  $(function(){
+    $('#slides').slides({
+      preload: true,
+      play: 5000,
+      pause: 2500,
+      hoverPause: true
+    });
+    $('#home').addClass('active');
+  });
