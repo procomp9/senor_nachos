@@ -1,7 +1,10 @@
-= stylesheet_link_tag 'slides'
-= javascript_include_tag 'slides'
+- content_for(:title, 'Señor Nacho B&B - Home')
 
-= stylesheet_link_tag 'home'
+- content_for(:head) do
+  = stylesheet_link_tag 'slides'
+  = javascript_include_tag 'slides'
+
+  = stylesheet_link_tag 'home'
 
 .section
   #slides
@@ -75,5 +78,4 @@
       pause: 2500,
       hoverPause: true
     });
-    $('#home').addClass('active');
   });

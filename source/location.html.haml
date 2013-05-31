@@ -1,12 +1,15 @@
-= stylesheet_link_tag "location"
-= javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
+- content_for(:title, 'Señor Nacho B&B - Location')
+
+- content_for(:head) do
+  = stylesheet_link_tag 'location'
+  = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
 
 .section
   %span#address
     .title
       Address
     .text
-      %a{:href => "https://maps.google.com/?q=1037%20Mechem%20Dr,%20Lincoln%20National%20Forest,%20Ruidoso,%20Lincoln,%20New%20Mexico%2088345", :target => "_blank"}
+      = link_to 'https://maps.google.com/?q=1037%20Mechem%20Dr,%20Lincoln%20National%20Forest,%20Ruidoso,%20Lincoln,%20New%20Mexico%2088345', :target => '_blank' do
         1037 Meachem Dr 
         %br
         Ruidoso, NM 88345
@@ -19,7 +22,5 @@
 
 :javascript
   $(function() {
-    document.title = "Señor Nacho B&B - Location"
-    $('#location').addClass('active');
     drawMap('map');
   });
